@@ -57,7 +57,7 @@ int main(int argc, char **argv)  {
 			}
 		}
 
-		sscanf(recvline, "%s %s %s", cmd, inputBuff, vers);
+		sscanf(recvline, "%s",inputBuff);
 		//convert the character of the vote to an integer
 		int i = inputBuff[0] - '0';
 		votes[i]++;
