@@ -1,12 +1,22 @@
 //Lab Test Convert to docx
 
+/*
+	Buffers needed other than basic connection/server setup
+
+	List of Celeb names and votes, probably 2 arrays, one for strings and one for the vote count. (Strings | Integers)
+
+
+
+*/
+
 main {
 	//setup server 
 	//identification for server on input on the cmd line
-	if(argc not 2)
+	if argc not 2
 		quit()
 
-	listenfd = Socket(AF_INET, SOCK_STREAM, 0)
+
+	listenfd = Socket( AF_INET, SOCK_STREAM, 0 )
 
 	bzero(&servaddr, sizeof(servaddr))
 
