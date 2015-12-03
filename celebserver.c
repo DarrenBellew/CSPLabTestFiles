@@ -68,7 +68,7 @@ int main(int argc, char **argv)  {
 			int temp = i / 2;
 			//to seperate them nicely
 			sendBuff[i++] = *(celebs + temp);
-			sendBuff[i++] = (char) votes[temp];
+			sendBuff[i++] = (char) *(votes+temp);
 		}
 
 		Write(connfd, sendBuff, strlen(sendBuff));
