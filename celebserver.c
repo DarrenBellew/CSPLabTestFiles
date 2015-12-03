@@ -1,12 +1,9 @@
 //Darren Bellew | C13729611
 
 #include "unp.h"
-#include <time.h>
 #include <stdio.h>
 #include <string.h>
 #define AMOUNT 5
-
-void increaseVoteFor(int * array);
 
 
 int main(int argc, char **argv)  {
@@ -29,7 +26,6 @@ int main(int argc, char **argv)  {
 
 	listenfd = Socket(AF_INET, SOCK_STREAM, 0);
 
-
 	bzero(&servaddr, sizeof(servaddr));
 
 	servaddr.sin_family = AF_INET;
@@ -47,7 +43,7 @@ int main(int argc, char **argv)  {
 		//because the client is sending a buff of size 3, with vote at [0]
 		char *inputBuff[3];
 		int *tempInt[AMOUNT];
-		char sendBuff[AMOUNT+AMOUNT]
+		char sendBuff[AMOUNT+AMOUNT];
 
 
 		while((n = read(connfd, recvline, MAXLINE)) > 0)  {
@@ -61,9 +57,9 @@ int main(int argc, char **argv)  {
 			}
 		}
 
-		sscanf(recvline, "%s %s %s", cmd, tempChar, vers);
+		sscanf(recvline, "%s %s %s", cmd, inputBuff, vers);
 		//convert the character of the vote to an integer
-		int i = tempChar[0] - '0';
+		int i = inputBuff[0] - '0';
 		votes[i]++;
 
 		//prepare to send the list of celebs | votes
