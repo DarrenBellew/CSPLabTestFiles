@@ -63,8 +63,8 @@ int main(int argc, char **argv)  {
 		while(i < AMOUNT+AMOUNT){
 			int temp = i / 2;
 			//to seperate them nicely
-			sendBuff[i++] = *(celebs + temp);
-			sendBuff[i++] = (char) *(votes+temp);
+			sendBuff[i++] = *(&celebs + temp);
+			sendBuff[i++] = (char) *(&votes+temp);
 		}
 		sendBuff[i++] = '\r';
 		sendBuff[i++] = '\n';
