@@ -3,7 +3,7 @@
 #include "unp.h"
 #include <stdio.h>
 #include <string.h>
-#define AMOUNT 5
+#define AMOUNT 10
 
 
 int main(int argc, char **argv)  {
