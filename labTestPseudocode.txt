@@ -1,0 +1,51 @@
+//Lab Test Convert to docx
+
+main {
+	//setup server 
+	//identification for server on input on the cmd line
+	if(argc not 2)
+		quit()
+
+	listenfd = Socket(AF_INET, SOCK_STREAM, 0)
+
+	bzero(&servaddr, sizeof(servaddr))
+
+	servaddr.sin_famile = AF_INET
+
+	//connect to any local ip
+	servaddr.sin_addr.s_addr = htonl(INADDR_ANY)
+
+	//setup port number as fist value of argv
+	servaddr.sin_port = htons(atoi(argv[1]));
+
+
+	Bind(listenfd, (SA *) &servaddr, sizeof(servaddr))
+
+	Listen(listenfd, LISTENQ)
+
+	while(1)  {
+		
+
+		while( data to read )  {
+			array.append( readFromClient() )
+			if (end of input)
+				break;
+		}
+
+		//check if valid not necessary 
+		//if client does the error checking already
+		if (checkForVote (AND voteIsValid))  {
+			celebs = increaseVoteFor(voteNumber)
+		}
+
+		listOfCelebsVtes = celebs
+		writeToClient(celebs)
+
+		Close(connfd)
+	}
+}
+
+array increaseVoteFor(voteNumber, array)  {
+	array[voteNumber] + 1
+	return array
+}
