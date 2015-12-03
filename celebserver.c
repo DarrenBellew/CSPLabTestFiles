@@ -60,14 +60,11 @@ int main(int argc, char **argv)  {
 
 		//prepare to send the list of celebs | votes
 		i = 0;
-
-		sprintf(sendBuff[0], "Thank you for your vote | ");
-		
 		while(i < AMOUNT+AMOUNT)  {
 			int temp = i / 2;
 			//to seperate them nicely
-			snprintf(sendBuff[i++ +1], *(celebs + temp));
-			snprintf(sendBuff[i++ +1], *(votes+temp));
+			sendBuff[i++] = *(celebs + temp);
+			sendBuff[i++] = (char) *(votes+temp);
 		}
 		sendBuff[i++] = '\r';
 		sendBuff[i++] = '\n';
