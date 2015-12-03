@@ -7,9 +7,6 @@
 
 
 int main(int argc, char **argv)  {
-	char cmd[16];
-	char path[64];
-	char vers[16];
 	char *celebs[AMOUNT] = {"Jorgie", "Kieron", "Ferne", "George", "Vicky"};
 	int *votes[AMOUNT] = {0, 0, 0, 0, 0};
 
@@ -17,7 +14,7 @@ int main(int argc, char **argv)  {
 	int listenfd, connfd;
 	struct sockaddr_in servaddr;
 
-	char buff[MAXLINE+1], recvline[MAXLINE+1];
+	char recvline[MAXLINE+1];
 
 
 	if(argc != 2)  {
@@ -42,7 +39,6 @@ int main(int argc, char **argv)  {
 		int n;
 		//because the client is sending a buff of size 3, with vote at [0]
 		char inputBuff[3];
-		int *tempInt[AMOUNT];
 		char *sendBuff[MAXLINE+1];
 
 
