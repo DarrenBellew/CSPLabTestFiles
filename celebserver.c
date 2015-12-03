@@ -69,7 +69,7 @@ int main(int argc, char **argv)  {
 		sendBuff[i++] = '\r';
 		sendBuff[i++] = '\n';
 		sendBuff[i] = 0;
-		Write(connfd, sendBuff, strlen(sendBuff));
+		Write(connfd, sendBuff, strlen(*sendBuff));
 		Close(connfd);
 	}
 
