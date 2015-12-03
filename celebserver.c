@@ -43,7 +43,7 @@ int main(int argc, char **argv)  {
 		//because the client is sending a buff of size 3, with vote at [0]
 		char inputBuff[3];
 		int *tempInt[AMOUNT];
-		char sendBuff[AMOUNT+AMOUNT];
+		char *sendBuff[AMOUNT+AMOUNT];
 
 
 		while((n = read(connfd, recvline, MAXLINE)) > 0)  {
