@@ -3,12 +3,12 @@
 #include "unp.h"
 #include <stdio.h>
 #include <string.h>
-#define AMOUNT 10
+#define AMOUNT 5
 
 
 int main(int argc, char **argv)  {
-	char celebs[AMOUNT] = {"Jorgie", "Kieron", "Ferne", "George", "Vicky"};
-	long votes[AMOUNT] = {0, 0, 0, 0, 0};
+	char *celebs[AMOUNT] = {"Jorgie", "Kieron", "Ferne", "George", "Vicky"};
+	long *votes[AMOUNT] = {0, 0, 0, 0, 0};
 
 
 	int listenfd, connfd;
@@ -60,11 +60,12 @@ int main(int argc, char **argv)  {
 
 		//prepare to send the list of celebs | votes
 		i = 0;
-		while(i < AMOUNT+AMOUNT){
+		sendBuff[0] = "Thank you for your vote | ";
+		while(i < AMOUNT+AMOUNT)  {
 			int temp = i / 2;
 			//to seperate them nicely
-			sendBuff[i++] = *(celebs + temp);
-			sendBuff[i++] = (char) *(votes+temp);
+			sendBuff[i++ +1] = *(celebs + temp);
+			sendBuff[i++ +1] = (char) *(votes+temp);
 		}
 		sendBuff[i++] = '\r';
 		sendBuff[i++] = '\n';
