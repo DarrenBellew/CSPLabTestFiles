@@ -41,7 +41,7 @@ int main(int argc, char **argv)  {
 		connfd = Accept(listenfd, (SA *) NULL, NULL);
 		int n;
 		//because the client is sending a buff of size 3, with vote at [0]
-		char *inputBuff[3];
+		char inputBuff[3];
 		int *tempInt[AMOUNT];
 		char sendBuff[AMOUNT+AMOUNT];
 
