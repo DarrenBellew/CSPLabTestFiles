@@ -8,7 +8,7 @@
 
 int main(int argc, char **argv)  {
 	char *celebs[AMOUNT] = {"Jorgie", "Kieron", "Ferne", "George", "Vicky"};
-	int *votes[AMOUNT] = {0, 0, 0, 0, 0};
+	long *votes[AMOUNT] = {0, 0, 0, 0, 0};
 
 
 	int listenfd, connfd;
